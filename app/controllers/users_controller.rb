@@ -1,6 +1,6 @@
-#class UsersController < ActiveRecord::Base
+class UsersController < ActiveRecord::Base
 
 
 
 
-#end
+end

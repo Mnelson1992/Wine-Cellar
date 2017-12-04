@@ -1,6 +1,6 @@
-#class BottlesController < ActiveRecord::Base
+class BottlesController < ActiveRecord::Base
 
 
 
 
-#end 
+end
