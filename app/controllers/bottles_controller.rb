@@ -1,4 +1,4 @@
-class BottlesController < ActiveRecord::Base
+class BottlesController < ApplicationController
 
 
 
