@@ -2,7 +2,7 @@
   <form action="/bottles/<%= @bottle.id %>" method="POST">
     <input id="hidden" type="hidden" name="_method" value="patch">
     <input type="text" name="name" value="<%= @bottle.name %>">
-    <input type="text" name="type" value="<%= @bottle.type %>">
+    <input type="text" name="grape" value="<%= @bottle.grape %>">
     <input type="text" name="year" value="<%= @bottle.year %>">
     <input type="text" name="location" value="<%= @bottle.location %>">
     <input type="submit" value="Update">
