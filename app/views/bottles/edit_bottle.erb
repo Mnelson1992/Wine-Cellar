@@ -1,6 +1,9 @@
 <h1>Edit Bottle</h1>
-  <form action="/tweets/<%= @tweet.id %>" method="POST">
+  <form action="/bottles/<%= @bottle.id %>" method="POST">
     <input id="hidden" type="hidden" name="_method" value="patch">
-    <textarea type="text" name="content"><%= @tweet.content %></textarea><br>
-    <input type="submit" value="submit">
+    <input type="text" name="name" value="<%= @bottle.name %>">
+    <input type="text" name="type" value="<%= @bottle.type %>">
+    <input type="text" name="year" value="<%= @bottle.year %>">
+    <input type="text" name="location" value="<%= @bottle.location %>">
+    <input type="submit" value="Update">
   </form>
