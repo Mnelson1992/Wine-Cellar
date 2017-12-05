@@ -1,5 +1,8 @@
-<h1>Welcome, <%=@user.username%></h1>
+<h1>Welcome</h1>
 
-<%Bottle.all.each do |Bottle| %>
+<% @bottle.each do |bottle| %>
   <%= bottle.name %>
+  <%= bottle.type %>
+  <%= bottle.year %>
+  <%= bottle.location %>
 <%end%>
