@@ -36,6 +36,46 @@ class BottlesController < ApplicationController
     end
   end
 
+  get '/bottles/:id/edit' do
+    if !logged_in?
+      redirect '/login'
+    else
+      @bottle = Bottle.find_by_id(params[:id])
+      if @tweet.user_id == current_user.id
+        erb :"/bottles/edit_bottle"
+      else
+        redirect "/bottles"
+      end
+    end
+  end
+
+  patch '/bottles/:id' do
+    if params[:name] == "" || params[:type] == "" || params[:year] == "" || params[:location] == ""
+      redirect to "/bottles/#{params[:id]}/edit"
+    else
+      @bottle = Bottle.find_by_id(params[:id])
+      @bottle.name = params[:name]
+      @bottle.type = params[:type]
+      @bottle.year = params[:year]
+      @bottle.location = params[:location]
+      @bottle.save
+      redirect to "/bottles/#{@bottle.id}"
+    end
+  end
+
+  delete '/bottles/:id/delete' do
+    if logged_in?
+      @bottle = Bottle.find_by_id(params[:id])
+      if @bottle.user_id == current_user.id
+        @bottle.delete
+        redirect to '/bottles'
+      else
+        redirect to '/bottles'
+      end
+    else
+      redirect to '/bottles'
+    end
+  end
 
 
 
