@@ -18,12 +18,11 @@ class BottlesController < ApplicationController
   end
 
   post '/bottles' do
-    if params[:name] != ""
-      @bottle = Bottle.new(name: params[:name], type: params[:type], year: params[:year], location: params[:location])
-      @bottle.user_id=session[:user_id]
-      @bottle.save
-    else
+    if params[:name] == ""
       redirect to '/bottles/new'
+    else
+      @bottle = current_user.bottles.create(name: params[:name])
+      redirect to '/bottles'
     end
   end
 
