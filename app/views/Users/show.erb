@@ -1,0 +1,5 @@
+<h1>Hey There, <%= @user.username %>!</h1>
+<h2>Here are your wine bottles!</h2>
+<% @user.bottles.all.each do |bottle| %>
+  <li><%= bottle.name %></li>
+<% end %>
