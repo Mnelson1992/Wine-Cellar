@@ -1,12 +1,9 @@
 <h2> Bottles </h2>
 
-<ul><% @bottles.each do |bottle| %><ul>
-  <li><%= bottle.name %></li>
-  <li><%= bottle.type %></li>
-  <li><%= bottle.year %></li>
-  <li><%= bottle.location %></li>
-
-<% end %>
+  <li><%= @bottle.name %></li>
+  <li><%= @bottle.type %></li>
+  <li><%= @bottle.year %></li>
+  <li><%= @bottle.location %></li>
 
 <form action="/bottles/<%= @bottle.id %>/delete" method="post">
   <input id="hidden" type="hidden" name="_method" value="delete">
