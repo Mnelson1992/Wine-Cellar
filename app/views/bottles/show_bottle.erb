@@ -1,5 +1,9 @@
 <h2> Bottles </h2>
 
-<% @bottles.each do |bottle| %>
-  <%= bottle.name %>
+<ul><% @bottles.each do |bottle| %><ul>
+  <li><%= bottle.name %></li>
+  <li><%= bottle.type %></li>
+  <li><%= bottle.year %></li>
+  <li><%= bottle.location %></li>
+
 <% end %>
