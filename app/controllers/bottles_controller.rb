@@ -54,7 +54,7 @@ class BottlesController < ApplicationController
     else
       @bottle = Bottle.find_by_id(params[:id])
       @bottle.name = params[:name]
-      @bottle.type = params[:type]
+      @bottle.grape = params[:grape]
       @bottle.year = params[:year]
       @bottle.location = params[:location]
       @bottle.save
