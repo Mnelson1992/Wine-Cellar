@@ -36,15 +36,11 @@ class BottlesController < ApplicationController
   end
 
   get '/bottles/:id/edit' do
-    if !logged_in?
-      redirect '/login'
+    if logged_in?
+      @bottle = Bottle.find_by(params[:id])
+      erb :'bottles/edit_bottle'
     else
-      @bottle = Bottle.find_by_id(params[:id])
-      if @bottle.user_id == current_user.id
-        erb :"/bottles/edit_bottle"
-      else
-        redirect "/bottles"
-      end
+      redirect to '/login'
     end
   end
 
