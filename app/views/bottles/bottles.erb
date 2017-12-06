@@ -1,8 +1,8 @@
-<h1>Welcome!</h1>
+<h2>Welcome To Your Wine Cellar!</h2>
 
-<% @bottle.each do |bottle| %>
-  <%= bottle.name %>
-  <%= bottle.grape %>
-  <%= bottle.year %>
-  <%= bottle.location %>
-<%end%>
+<h3>Here Is A List Of All The Bottles Of Wine You Currently Have:</h3>
+<ul>
+  <% @bottle.each do |bottle| %></ul>
+    <li><a href="/bottles/<%=bottle.id%>"><%= bottle.name %> </a></li>
+  <%end%>
+</ul>
