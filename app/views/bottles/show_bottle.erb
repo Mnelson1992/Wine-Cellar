@@ -1,9 +1,9 @@
 <h2> Bottles </h2>
 
-  <li><%= @bottle.name %></li>
-  <li><%= @bottle.grape %></li>
-  <li><%= @bottle.year %></li>
-  <li><%= @bottle.location %></li>
+<%= @bottle.name %>
+<%= @bottle.grape %>
+<%= @bottle.year %>
+<%= @bottle.location %>
 
 <form action="/bottles/<%= @bottle.id %>/delete" method="post">
   <input id="hidden" type="hidden" name="_method" value="delete">
