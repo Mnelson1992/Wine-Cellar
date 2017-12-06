@@ -21,7 +21,7 @@ class BottlesController < ApplicationController
     if params[:name] == ""
       redirect to '/bottles/new'
     else
-      @bottle = current_user.bottles.create(name: params[:name])
+      @bottle = current_user.bottles.create(name: params[:name], grape: params[:grape])
       redirect to '/bottles'
     end
   end
@@ -37,7 +37,7 @@ class BottlesController < ApplicationController
 
   get '/bottles/:id/edit' do
     if logged_in?
-      @bottle = Bottle.find(params[:id])
+      @bottle = Bottle.find_by_id(params[:id])
       erb :"/bottles/edit_bottle"
     else
         redirect "/login"
