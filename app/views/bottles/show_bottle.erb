@@ -1,9 +1,10 @@
-<h3> Bottles </h3>
+<h2> Here is your bottle of <%= @bottle.name%> </h2>
+<ul>
 
-<%= @bottle.name %>
-<%= @bottle.grape %>
-<%= @bottle.year %>
-<%= @bottle.location %>
+<h3><em><li><%= @bottle.grape %></li></em></h3>
+<h3><em><li><%= @bottle.year %></li></em></h3>
+<h3><em><li><%= @bottle.location %></li></em></h3>
+</ul>
 
 <form action="/bottles/<%= @bottle.id %>/delete" method="post">
   <input id="hidden" type="hidden" name="_method" value="delete">
