@@ -28,7 +28,7 @@ class BottlesController < ApplicationController
 
   get '/bottles/:id' do
     if logged_in?
-      @bottle = current_user.bottles.find_by(params[:id])
+      @bottle = current_user.bottles.all.find_by_id(params[:id])
       erb :'bottles/show_bottle'
     else
       redirect to '/login'
@@ -37,7 +37,7 @@ class BottlesController < ApplicationController
 
   get '/bottles/:id/edit' do
     if logged_in?
-      @bottle = Bottle.find_by(params[:id])
+      @bottle = Bottle.find_by_id(params[:id])
       erb :'bottles/edit_bottle'
     else
       redirect to '/login'

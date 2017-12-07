@@ -2,7 +2,7 @@
 
 <h3>Here Is A List Of All The Bottles Of Wine You Currently Have:</h3>
 <ul>
-  <% @bottle.each do |bottle| %></ul>
+  <% @bottle.each do |bottle| %>
     <li><a href="/bottles/<%=bottle.id%>"><%= bottle.name %> </a></li>
   <%end%>
 </ul>
