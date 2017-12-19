@@ -2,7 +2,6 @@ class BottlesController < ApplicationController
 
   get '/bottles' do
     if logged_in?
-      @bottle = current_user.bottles.all
       erb :'bottles/bottles'
     else
       redirect to '/login'
@@ -27,34 +26,33 @@ class BottlesController < ApplicationController
   end
 
   get '/bottles/:id' do
-    if logged_in?
-      @bottle = current_user.bottles.all.find_by_id(params[:id])
+    authenticate_user!
+    if @bottle = current_user.bottles.find_by_id(params[:id])
       erb :'bottles/show_bottle'
     else
-      redirect to '/login'
+      redirect to '/bottles'
     end
   end
 
   get '/bottles/:id/edit' do
-    if logged_in?
-      @bottle = Bottle.find_by_id(params[:id])
+    authenticate_user!
+    if @bottle = current_user.bottles.find_by_id(params[:id])
       erb :'bottles/edit_bottle'
     else
-      redirect to '/login'
+      redirect to '/bottles'
     end
   end
 
   patch '/bottles/:id' do
-    if params[:name] == "" || params[:type] == "" || params[:year] == "" || params[:location] == ""
-      redirect to "/bottles/#{params[:id]}/edit"
+    authenticate_user!
+    if @bottle = current_user.bottles.find_by_id(params[:id])
+      if @bottle.update(params[:bottle])
+        redirect to "/bottles/#{@bottle.id}"
+      else
+        erb :'bottles/edit_bottle', locals: { message: @bottle.errors.full_messages.to_sentence }
+      end
     else
-      @bottle = Bottle.find_by_id(params[:id])
-      @bottle.name = params[:name]
-      @bottle.grape = params[:grape]
-      @bottle.year = params[:year]
-      @bottle.location = params[:location]
-      @bottle.save
-      redirect to "/bottles/#{@bottle.id}"
+      redirect to '/bottles'
     end
   end
 
@@ -71,7 +69,5 @@ class BottlesController < ApplicationController
       redirect to '/bottles'
     end
   end
-
-
 
 end

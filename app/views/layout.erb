@@ -10,7 +10,7 @@
   <nav>
       <% if logged_in? %>
 
-        <h1><p>Welcome, <%=current_user.username %></p></h1>
+        <h1><p>Welcome, <%= current_user.username %></p></h1>
         <a href="/bottles/new"> Add A New Bottle </a>
         <a href="/logout"> Log Out </a>
 

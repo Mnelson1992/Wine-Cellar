@@ -1,3 +1,5 @@
 class Bottle < ActiveRecord::Base
   belongs_to :user
-end 
+
+  validates :name, :location, :year, :grape, presence: true
+end
