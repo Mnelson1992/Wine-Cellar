@@ -20,7 +20,7 @@ CSS & HTML
 
 Application Controller
 - [] Go over the authenticate_user method and apply to the bottles controller
-- [] Redesign the home page (index.erb) 
+- [] Redesign the home page (index.erb)
 - []
 - []
 
@@ -49,7 +49,7 @@ User Model
 - []
 
 Bottles View
-- [] Add the Update button feature to the show bottle page
+- [X] Add the Update button feature to the show bottle page
 - []
 - []
 - []
