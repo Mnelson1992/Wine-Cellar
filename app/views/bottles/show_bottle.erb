@@ -7,6 +7,11 @@
 </ul>
 
 <form action="/bottles/<%= @bottle.id %>/delete" method="post">
-  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
   <input type="submit" value="Drank Bottle">
+</form>
+<br>
+<form action="/bottles/<%= @bottle.id %>/edit" method="patch">
+  <input type="hidden" name"_method" value="EDIT">
+  <input type="submit" value="Edit Bottle">
 </form>
