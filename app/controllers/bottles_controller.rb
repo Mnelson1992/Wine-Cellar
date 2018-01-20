@@ -1,5 +1,13 @@
 class BottlesController < ApplicationController
 
+  get '/home' do
+    if logged_in?
+      erb :'bottles/home'
+    else
+      redirect to '/login'
+    end
+  end
+  
   get '/bottles' do
     if logged_in?
       erb :'bottles/bottles'
