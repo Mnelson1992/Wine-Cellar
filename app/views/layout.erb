@@ -12,14 +12,13 @@
       <% if logged_in? %>
 
       <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
-          <a class="navbar-brand" href="#">Wine Cellar</a>
+          <a class="navbar-brand" href="/bottles">Wine Cellar</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-item nav-link active" href="/home">Home <span class="sr-only">(current)</span></a>
-              <a class="nav-item nav-link" href="/bottles">Bottles</a>
+              <a class="nav-item nav-link active" href="/bottles">Bottles <span class="sr-only">(current)</span></a>
               <a class="nav-item nav-link" href="/bottles/new">Add A Bottle</a>
               <a class="nav-item nav-link" href="/logout">Log Out</a>
             </div>
@@ -30,7 +29,7 @@
       <h1><p>Welcome, <%= current_user.username %>!</p></h1>
       <img src=”images/wood-3362108_1920.jpg”>
 
-      
+
       <% else %>
         <a href="/signup">Sign Up</a>
         <a href="/login"> Sign In </a>
