@@ -7,27 +7,30 @@
   </head>
 
 <body>
-  <img src=”images/wood-3362108_1920.jpg”>
 
   <nav>
       <% if logged_in? %>
 
-      <div class="container-fluid">
-      <h1><p>Welcome, <%= current_user.username %></p></h1>
-
-        <div class="row">
-          <div class="col">
-            <button type="button" class="btn btn-outline-secondary"><a href="/bottles/new"> Add A New Bottle </a></button>
+      <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
+          <a class="navbar-brand" href="#">Wine Cellar</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link active" href="/home">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link" href="/bottles">Bottles</a>
+              <a class="nav-item nav-link" href="/bottles/new">Add A Bottle</a>
+              <a class="nav-item nav-link" href="/logout">Log Out</a>
+            </div>
           </div>
-          <div class="col">
-            <button type="button" class="btn btn-outline-secondary"><a href="/logout"> Log Out </a></button>
-          </div>
-        </div>
+        </nav>
 
 
+      <h1><p>Welcome, <%= current_user.username %>!</p></h1>
+      <img src=”images/wood-3362108_1920.jpg”>
 
-
-
+      
       <% else %>
         <a href="/signup">Sign Up</a>
         <a href="/login"> Sign In </a>
