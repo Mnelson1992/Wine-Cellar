@@ -3,7 +3,7 @@
   <head>
     <title>WineCellar</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
   </head>
 
 <body>
@@ -27,7 +27,7 @@
 
 
       <h1><p>Welcome, <%= current_user.username %>!</p></h1>
-      <img src=”images/wood-3362108_1920.jpg”>
+      <img src="/images/wine-holder.png" />
 
 
       <% else %>
@@ -48,14 +48,14 @@
 
 
       <%= yield %>
-      <img src=”images/wood-3362108_1920.jpg”>
+      <img src="/images/wine-holder.png" />
 
       <br>
     <footer class="branding">
       <small>&copy; 2017 <strong>WineCellar</strong></small>
     </footer>
   </div>
+</body>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-</body>

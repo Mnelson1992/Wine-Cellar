@@ -8,6 +8,7 @@ class ApplicationController < Sinatra::Base
     enable :sessions
     set :session_secret, "wine_vault"
   end
+  
 
   get "/" do
     erb :index

@@ -13,16 +13,19 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    background-image: url('wood-336201_1920.jpg');
-    color: #333;
+    /*background-image: url('images/wine-holder.jpg');*/
+    color: pink;
     font-family: Sans-Serif;
     line-height: 18px;
   }
 
+  .back_color {
+    background: pink;
+  }
 
 
   .wrapper {
-    background: #fff;
+    background: green;
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
     box-shadow: 0 0 10px rgba(0,0,0,.3);
